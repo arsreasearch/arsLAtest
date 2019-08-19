@@ -1,0 +1,56 @@
+
+{% include "header.html" %}
+
+
+{% block body %}
+
+<input type="button" value="{{ url_for('train')  }}">
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+<a href="/train">Add training images</a>
+<h2>Registered Users</h2>
+
+<table>
+  <tr>
+    <th>Users</th>
+  </tr>
+  {% for row in rows %}
+  <tr>
+    <td>{{row[0]}}</td>
+    <td>DELETE</td>
+    <td> <a href="/fetchUser">Add training images</a></td>
+  </tr>
+  {% endfor %}
+
+</table>
+
+</body>
+</html>
+
+
+
+ 
+
+{% endblock %}
